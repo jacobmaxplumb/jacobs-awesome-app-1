@@ -15,6 +15,9 @@ const schema = a.schema({
   Cars: a
     .model({ make: a.string(), model: a.string(), year: a.string() })
     .authorization((allow) => [allow.publicApiKey()]),
+  People: a
+    .model({ fullName: a.string(), age: a.string() })
+    .authorization((allow) => [allow.owner()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
