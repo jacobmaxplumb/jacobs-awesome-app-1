@@ -32,7 +32,7 @@ function People() {
         onChange={(e) => setFormValues({ ...formValues, age: e.target.value })}
       />
       <button onClick={createPerson}>Add</button>
-      {people.map(person => <div key={person.id}>{person.name} - {person.age}</div>)}
+      {people.map(person => <div key={person.id}>{person.fullName} - {person.age}</div>)}
     </div>
   );
 }
